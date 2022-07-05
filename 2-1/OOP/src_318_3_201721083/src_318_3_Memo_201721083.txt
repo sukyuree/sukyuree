@@ -1,0 +1,44 @@
+package ex2;
+import java.time.LocalDateTime;
+import java.lang.StringBuilder;
+import java.lang.String;
+import java.util.Scanner;
+
+class Memo{
+	   public String Title;
+	   public String MAIN;
+	   public String O_MAIN;
+	   public String Create_Time,Change_Time;
+	   public StringBuilder sb ;
+
+	   public void memo(String t, String m) {
+	      Title = t;
+	      MAIN = m;
+	      O_MAIN = m;
+	      Create_Time = LocalDateTime.now().toString();
+	      Change_Time = Create_Time;
+	      sb = new StringBuilder(MAIN);
+	   }
+	   public void CHANGE_TIME() {
+	      Change_Time = LocalDateTime.now().toString();
+	   }
+	   public String getName() {
+	      return Title;
+	   }
+	   public String getMain() {
+	      return MAIN;
+	   }   
+	   public void Change_Main(int a, int b, String str) {
+	      MAIN = sb.replace(a,b,str).toString();
+	   }
+	   public void Append_Main(String str) {
+	      MAIN = sb.append("\n"+str).toString();
+	   }
+	   public void Insert_Main(int a, String str) {
+	      MAIN = sb.insert(a,str).toString();
+	   }
+	   public void Delete_Main(int a, int b) {
+	      MAIN = sb.delete(a,b).toString();
+	   }
+	   
+	}

@@ -1,0 +1,71 @@
+package ex2;
+import java.time.LocalDateTime;
+import java.lang.StringBuilder;
+import java.lang.String;
+import java.util.Scanner;
+public class Memotest {
+	   public static void main(String[] args) {
+	      int End = 0; 
+	      int Choice,p1,p2;
+	      String str;
+	      Scanner in = new Scanner(System.in);
+	      Memo MEMO = new Memo();
+	      MEMO.memo("Couple", "TaeSeok and DaHee are couple");
+	      System.out.print("Title is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	      while(End<1) {
+	         System.out.println("\nIf you wand to insert the memo,  Please press 1");
+	         System.out.println("If you wand to replace the memo, Please press 2");
+	         System.out.println("If you wand to append the memo,  Please press 3");
+	         System.out.println("If you wand to delete the memo,  Please press 4");
+	         Choice = in.nextInt();
+	         if(Choice==1) {
+	           System.out.print("Press insertion place\n");
+	           p1 = in.nextInt();
+	           System.out.print("Write your memo\n");
+	           str = in.nextLine();
+	           str = in.nextLine();
+	           System.out.print("\nBefore\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	           MEMO.Insert_Main(p1, str);
+	           MEMO.CHANGE_TIME();
+	           System.out.print("\nAfter\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	         }
+	         else if(Choice ==2) {
+	            System.out.print("Press replacement place _ to _\n");
+	            p1 = in.nextInt();
+	            p2 = in.nextInt();
+	            System.out.print("Write your memo\n");
+	            str = in.nextLine();
+		        str = in.nextLine();
+	            System.out.print("\nBefore\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	            MEMO.Change_Main(p1, p2, str);
+	            MEMO.CHANGE_TIME();
+	             System.out.print("\nAfter\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	         }
+	         else if(Choice ==3) {
+	            System.out.print("Add your memo\n");
+	            str = in.nextLine();
+		        str = in.nextLine();
+	            System.out.print("\nBefore\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	            MEMO.Append_Main(str);
+	            MEMO.CHANGE_TIME();
+	             System.out.print("\nAfter\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	         }
+	         else if(Choice ==4) {
+	            System.out.print("Press deletion part _ to _\n");
+	            p1 = in.nextInt();
+	            p2 = in.nextInt();
+	            System.out.print("\nBefore\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	            MEMO.Delete_Main(p1, p2);
+	            MEMO.CHANGE_TIME();
+	             System.out.print("\nAfter\n\nTitle is : "+MEMO.Title+"\nCurrent time is     : "+MEMO.Create_Time+"\nModificated time is : "+MEMO.Change_Time+"\nMEMO is : "+MEMO.MAIN);
+	         }
+	         else {
+	            System.out.print("Error!!!");
+	            break;
+	         }
+	         System.out.print("\nKeep going?\nYes : 0 , No : 1\n");
+	         End = in.nextInt();
+	      }
+	  in.close();
+	   }
+}

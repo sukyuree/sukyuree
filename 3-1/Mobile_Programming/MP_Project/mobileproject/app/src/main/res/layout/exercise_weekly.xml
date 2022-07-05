@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/plan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFE696"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pont" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="276dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="12dp"
+        android:background="#00BCD4"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="WeeklyPlan"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ListView
+        android:id="@+id/Sun"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toEndOf="@+id/Satur"
+        app:layout_constraintTop_toBottomOf="@+id/SunDay" />
+
+    <TextView
+        android:id="@+id/satur"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginBottom="260dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       S"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/Fri"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FriDay" />
+
+    <TextView
+        android:id="@+id/FriDay"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="260dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       F"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/SunDay"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginBottom="260dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       S"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/Satur"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toEndOf="@+id/Fri"
+        app:layout_constraintTop_toBottomOf="@+id/satur" />
+
+    <ListView
+        android:id="@+id/Thursday"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toEndOf="@+id/W"
+        app:layout_constraintTop_toBottomOf="@+id/ThursDay" />
+
+    <TextView
+        android:id="@+id/m"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="5dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       M"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/mon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ListView
+        android:id="@+id/mon"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ThursDay"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="132dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       T"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toEndOf="@+id/WednesDay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/Tues"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="180dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintStart_toEndOf="@+id/mon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tuesday"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       T"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/Tues"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.963" />
+
+    <TextView
+        android:id="@+id/WednesDay"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:background="#A2E159"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        android:text="       W"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/W"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.667"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <ListView
+        android:id="@+id/W"
+        android:layout_width="83dp"
+        android:layout_height="135dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="180dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/sdsamliphopangchebasic"
+        app:layout_constraintStart_toEndOf="@+id/Tues"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

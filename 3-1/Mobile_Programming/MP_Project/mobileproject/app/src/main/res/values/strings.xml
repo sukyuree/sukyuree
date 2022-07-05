@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">mobile_teamproject_bundle</string>
+    <string name="dialog_positive_button">확인</string>
+    <string name="dialog_network_alert_message">해당 서비스는 네트워크 연결이 필요합니다. 와이파이 혹은 데이터를 통해 연결해 주시길 바랍니다. \n(데이터 이용 시, 요금이 부과될 수 있습니다.)</string>
+
+    <string name="main_category">식단 카테고리</string>
+    <string name="study_diet_main_category_name">열공 식단</string>
+    <string name="healthy_diet_main_category_name">건강 식단</string>
+    <string name="home_meal_main_category_name">가정식 식단</string>
+    <string name="event_diet_main_category_name">이벤트 식단</string>
+    <string name="refresh_diet_main_category_name">기분 UP 식단</string>
+    <string name = "appName">Diet and Health</string>
+    <!--network-->
+    <string name="network_connected_message">네트워크가 연결되었습니다. 해당 서비스 이용이 가능합니다.</string>
+    <string name="network_unconnected_message">네트워크가 연결되지 않았습니다. 다시 설정해 주시길 바랍니다.</string>
+</resources>

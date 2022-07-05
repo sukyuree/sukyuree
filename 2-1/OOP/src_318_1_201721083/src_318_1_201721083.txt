@@ -1,0 +1,161 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+typedef struct Card {
+	int suit;
+	int value;
+}CARD;
+
+typedef struct Player {
+	char name[20];
+	int balance;
+	CARD hand;
+}PLAYER;
+
+PLAYER players[2];
+CARD deck[52];
+
+void initialize(PLAYER *players) {
+	printf("INPUT PLAYER1'S NAME\n");
+	scanf("%s", players[0].name);
+	printf("INPUT PLAYER2'S NAME\n");
+	scanf("%s", players[1].name);
+	printf("INPUT PLAYER1'S BALANCE\n");
+	scanf("%d", &players[0].balance);
+	printf("INPUT PLAYER2'S BALANCE\n");
+	scanf("%d", &players[1].balance);
+}
+void carddeck(CARD* deck) {
+	int i = 0;
+	for (int a = 1; a <= 4; a++) {
+		for (int b = 2; b <= 14; b++) {
+			deck[i].suit = a;
+			deck[i].value = b;
+			i++;
+		}
+	}
+}
+
+void swap(CARD* A, CARD* B) {
+	CARD temp;
+	temp = *A;
+	*A = *B;
+	*B = temp;
+}
+
+void shuffle(CARD* deck) {
+	for (int i = 0; i <= 51; i++) {
+		int rand1 = rand() % 52;
+		int rand2 = rand() % 52;
+		swap(&deck[rand1], &deck[rand2]);
+	}
+}
+void Myprint(PLAYER* players, int bet_money,int win) {
+	char* shape1;
+	char* shape2;
+	char* shape3;
+	char* shape4;
+	if (players[0].hand.suit == 4) shape1 = "Spade";
+	else if (players[0].hand.suit == 3) shape1 = "Diamond";
+	else if (players[0].hand.suit == 2) shape1 = "Heart";
+	else if (players[0].hand.suit == 1) shape1 = "Club";
+
+	if (players[1].hand.suit == 4) shape2 = "Spade";
+	else if (players[1].hand.suit == 3) shape2 = "Diamond";
+	else if (players[1].hand.suit == 2) shape2 = "Heart";
+	else if (players[1].hand.suit == 1) shape2 = "Club";
+
+	if (players[0].hand.value == 1) shape3 = "1";
+	else if (players[0].hand.value == 2) shape3 = "2";
+	else if (players[0].hand.value == 3) shape3 = "3";
+	else if (players[0].hand.value == 4) shape3 = "4";
+	else if (players[0].hand.value == 5) shape3 = "5";
+	else if (players[0].hand.value == 6) shape3 = "6";
+	else if (players[0].hand.value == 7) shape3 = "7";
+	else if (players[0].hand.value == 8) shape3 = "8";
+	else if (players[0].hand.value == 9) shape3 = "9";
+	else if (players[0].hand.value == 10) shape3 = "10";
+	else if (players[0].hand.value == 11) shape3 = "Jack";
+	else if (players[0].hand.value == 12) shape3 = "Queen";
+	else if (players[0].hand.value == 13) shape3 = "King";
+	else if (players[0].hand.value == 14) shape3 = "Ace";
+
+	if (players[1].hand.value == 1) shape4 = "1";
+	else if (players[1].hand.value == 2) shape4 = "2";
+	else if (players[1].hand.value == 3) shape4 = "3";
+	else if (players[1].hand.value == 4) shape4 = "4";
+	else if (players[1].hand.value == 5) shape4 = "5";
+	else if (players[1].hand.value == 6) shape4 = "6";
+	else if (players[1].hand.value == 7) shape4 = "7";
+	else if (players[1].hand.value == 8) shape4 = "8";
+	else if (players[1].hand.value == 9) shape4 = "9";
+	else if (players[1].hand.value == 10) shape4 = "10";
+	else if (players[1].hand.value == 11) shape4 = "Jack";
+	else if (players[1].hand.value == 12) shape4 = "Queen";
+	else if (players[1].hand.value == 13) shape4 = "King";
+	else if (players[1].hand.value == 14) shape4 = "Ace";
+
+	printf("%s : %s of %s, %s : %s of %s --->%s won %d\n", players[0].name, shape1, shape3, players[1].name, shape2, shape4, players[win].name, bet_money);
+}
+void playGames(PLAYER* players) {
+	CARD deck[52];
+	carddeck(deck);
+	int End = 0;
+	int bet_money;
+	int win = 0;
+	printf("plz input betting amount \n");
+	scanf("%d", &bet_money);
+	while (!End) {
+		shuffle(deck);
+		for (int i = 0; i < 52; i = i + 2) {
+			if (players[0].balance < bet_money || players[1].balance < bet_money) {
+				End = 1;
+				break;
+			}
+			players[0].hand = deck[i];
+			players[1].hand = deck[i + 1];
+			if (players[0].hand.value > players[1].hand.value) {
+				players[0].balance += bet_money;
+				players[1].balance -= bet_money;
+				win = 0;
+			}
+			else if (players[1].hand.value > players[0].hand.value) {
+				players[0].balance -= bet_money;
+				players[1].balance += bet_money;
+				win = 1;
+			}
+			else {
+				if (players[0].hand.suit > players[1].hand.suit) {
+					players[0].balance += bet_money;
+					players[1].balance -= bet_money;
+					win = 0;
+				}
+				else {
+					players[0].balance -= bet_money;
+					players[1].balance += bet_money;
+					win = 1;
+				}
+			}
+			Myprint(players, bet_money, win);
+		}
+		if (players[0].balance < players[1].balance) {
+			win = 1;
+			printf("%s's balance : %d, %s's balance : %d\nSo winner is %s\n", players[0].name, players[0].balance, players[1].name, players[1].balance, players[win].name);
+		}
+		else if (players[0].balance > players[1].balance) {
+			win = 0;
+			printf("%s's balance : %d, %s's balance : %d\nSo winner is %s\n", players[0].name, players[0].balance, players[1].name, players[1].balance, players[win].name);
+		}
+		else {
+			printf("%s's balance : %d %s's balance : %d\n Draw\n", players[0].name, players[0].balance, players[1].name, players[1].balance);
+		}
+	}
+}
+void main(){
+	srand((int)time(NULL));
+	initialize(players);
+	printf("PLAYER1's name : %s\nPLAYER2's name : %s\n", players[0].name, players[1].name);
+	playGames(players);
+}
